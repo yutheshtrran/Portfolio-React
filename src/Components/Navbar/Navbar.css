@@ -1,0 +1,101 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 170px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 60px;
+    font-size: 20px;
+}
+
+.nav-connect {
+    padding: 20px 40px;
+    border-radius: 50px;
+    background: linear-gradient(267deg, #08df77 0.36%, #081dbe);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.nav-connect:hover {
+    transform: scale(1.07);
+}
+
+.nav-menu li {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.nav-menu li img {
+    display: flex;
+    margin: auto;
+}
+
+.nav-menu li img:hover {
+    transition: 0.5s;
+}
+
+.anchor-link {
+    text-decoration: none;
+    color: white;
+}
+
+/* Hide mobile menu icons in desktop mode */
+.nav-mob-open, .nav-mob-close {
+    display: none; /* Default is hidden */
+}
+
+/* For mobile view: show icons */
+@media (max-width: 768px) {
+    .navbar {
+        margin: 20px 50px;
+    }
+
+    .nav-connect {
+        display: none;
+    }
+    .anchor-link {
+        margin-top: 15px;
+    }
+    .close{
+        position: right;
+        margin-top: 20px;
+    }
+    .nav-mob-open{
+        display: block;
+        cursor: pointer;
+    }
+    .nav-mob-close {
+        display: block;
+        cursor: pointer;
+        position: fixed;   /* Fixes it to the viewport */
+        border-top: 10;            /* Aligns it to the top */
+        right: 10;          /* Aligns it to the right */
+        z-index: 100;     /* Ensures it stays above other elements */
+    }
+    .side{
+        margin-top: 40px;
+    }
+
+    .nav-menu {
+        position: fixed;
+        display: flex;                      /* Make sure it's a flex container */
+        flex-direction: column;             /* Items arranged vertically */
+        align-items: flex-start;
+        align-items: center;            /* Align items to the left */
+        top: 0px;
+        gap: 30px;
+        background-color: #00021f;
+        width: 350px;
+        height: 100%;
+        z-index: 2;
+        transition: right 0.5s;
+        right: -350px;                      /* Start off-screen */
+    }
+}
